@@ -1,0 +1,14 @@
+.POSTS{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 25px;
+    width: 400px;
+    color: red;
+    border: 2px solid black;
+    border-radius: 14px;
+}
+.POSTS p{
+    contain: paint;
+    color: blue;
+}
