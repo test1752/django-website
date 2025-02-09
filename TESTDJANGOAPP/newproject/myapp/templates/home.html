@@ -9,29 +9,39 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'contact' %}">Contact</a>
-    </nav>
+    <header class="header">
+        <nav class="navbar">
+            <a href="{% url 'home' %}" class="nav-link">Home</a>
+            <a href="{% url 'about' %}" class="nav-link">About</a>
+            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+        </nav>
+    </header>
 
+    <main class="main-content">
+        <section class="hero">
+            <h1 class="hero-title">Welcome to the Home Page</h1>
+            <p class="hero-subtitle">A space for innovation and creativity.</p>
+        </section>
 
+        <section class="blog-posts">
+            <h2 class="section-title">Blog Posts</h2>
+            <ul class="post-list">
+                {% for post in posts %}
+                <li class="post-item">
+                    <article class="post">
+                        <h3 class="post-title">{{ post.title }}</h3>
+                        <p class="post-content">{{ post.content }}</p>
+                        <p class="post-description">{{ post.description }}</p>
+                        <time class="post-date" datetime="{{ post.created_at|date:'Y-m-d' }}">Date Added: {{ post.created_at }}</time>
+                    </article>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
 
-    <h1>Welcome to the Home Page</h1>
-    <p>test</p>
-
-    <div class="POSTS">
-        <h3>BLOG POSTS</h3>
-        <ul>
-            {% for post in posts %}
-            <li>
-                <h4>{{ post.title }}</h4>
-                <p>{{ post.content }}</p>
-                <p>Description: {{ post.description }}</p>
-                <small>Date Added: {{ post.created_at }}</small>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+    <footer class="footer">
+        <p class="footer-text">&copy; 2025 All rights reserved.</p>
+    </footer>
 </body>
 </html>
