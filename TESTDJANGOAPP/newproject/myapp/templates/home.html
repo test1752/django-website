@@ -30,8 +30,9 @@
                 <li class="post-item">
                     <article class="post">
                         <h3 class="post-title">{{ post.title }}</h3>
-                        <p class="post-content">{{ post.content }}</p>
-                        <p class="post-description">{{ post.description }}</p>
+                        {% if post.content %}
+                            <p class="post-description">{{ post.description }}</p>
+                        {% endif %}
                         <time class="post-date" datetime="{{ post.created_at|date:'Y-m-d' }}">Date Added: {{ post.created_at }}</time>
                     </article>
                 </li>
