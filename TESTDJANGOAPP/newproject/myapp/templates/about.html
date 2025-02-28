@@ -8,12 +8,23 @@
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'contact' %}">Contact</a>
-    </nav>
+    <header class="header">
+        <nav class="navbar">
+            <a href="{% url 'home' %}" class="nav-link">Home</a>
+            <a href="{% url 'about' %}" class="nav-link">About</a>
+            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+            <button id="theme-toggle" class="nav-link">
+                <span id="theme-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79C20.8427 14.4922 20.2039 16.1144 19.1582 17.4668C18.1126 18.8192 16.7035 19.8458 15.0957 20.4265C13.4879 21.0073 11.748 21.1181 10.0795 20.7461C8.41104 20.3741 6.88295 19.5345 5.67418 18.3258C4.46541 17.1171 3.62587 15.589 3.25385 13.9205C2.88183 12.252 2.99266 10.5121 3.57343 8.9043C4.15421 7.29651 5.18082 5.88737 6.5332 4.84175C7.88558 3.79614 9.5078 3.15731 11.21 3C10.2134 4.34827 9.73375 6.00945 9.85849 7.68141C9.98324 9.35338 10.7039 10.9251 11.8894 12.1106C13.0749 13.2961 14.6466 14.0168 16.3186 14.1415C17.9906 14.2663 19.6517 13.7866 21 12.79Z" fill="currentColor"/>
+                    </svg>
+                </span>
+                Switch to Light Mode
+            </button>
+        </nav>
+    </header>
     <h1>Welcome to the About Page</h1>
     <p>test</p>
+    <script src="{% static 'js/theme.js' %}"></script>
 </body>
 </html>
