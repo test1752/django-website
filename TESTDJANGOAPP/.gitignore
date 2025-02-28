@@ -13,4 +13,8 @@ secrets.py
 venv/
 myenv/
 
+# Ignore Python Cache files
+*.pyc
+__pycache__/
+
 newproject/db.sqlite3
