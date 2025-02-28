@@ -6,10 +6,13 @@ from .models import Task, Post
 admin.site.register(Task)
 
 class PostAdmin(admin.ModelAdmin):
+    class Media:
+        js = ('js/admin.js',)  # admin.js path
+
     def get_fields(self, request, obj=None):
         fields = super().get_fields(request, obj)
         
-        # if object exists and content isnt checked, remove the description box
+        # if object exists and content isnt checked remove the description box
         if obj and not obj.content:
             fields.remove('description')
         
