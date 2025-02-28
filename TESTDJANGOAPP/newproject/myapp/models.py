@@ -8,8 +8,8 @@ class Task(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField(blank=True)
     content = models.BooleanField(default=False)
+    description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
